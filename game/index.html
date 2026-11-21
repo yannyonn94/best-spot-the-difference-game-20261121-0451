@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Tales — Spot the Difference</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="hud">
+  <div class="brand">🔍 TWIN TALES <span>Spot the Difference</span></div>
+  <div class="hud-block"><div class="hud-label">Level</div><div id="level-name" class="hud-value">Level 1 · Coral Cove Beach</div><div id="level-sub" class="hud-sub">Level 1 · Sunny · 180 seconds</div></div>
+  <div class="hud-block"><div class="hud-label">Time</div><div id="timer" class="hud-value big">3:00</div></div>
+  <div class="hud-block"><div class="hud-label">Score</div><div id="score" class="hud-value big">0</div></div>
+  <div class="hud-block"><div class="hud-label">Hearts</div><div id="hearts" class="hud-value hearts">♥♥♥♥♥</div></div>
+  <div class="hud-block counter-block"><div id="found-count" class="found-count">FOUND 0 / 7</div><div id="remain-count" class="remain-count">7 LEFT TO FIND</div></div>
+</header>
+
+<main class="panels">
+  <figure class="panel">
+    <figcaption>LEFT — THE ORIGINAL</figcaption>
+    <canvas id="panel-left" aria-label="Left picture: the original scene"></canvas>
+  </figure>
+  <div class="vs">VS</div>
+  <figure class="panel">
+    <figcaption>RIGHT — SPOT 7 DIFFERENCES</figcaption>
+    <canvas id="panel-right" aria-label="Right picture: the scene with seven differences"></canvas>
+  </figure>
+</main>
+
+<div class="dots-row"><span class="dots-label">Differences found:</span><span id="dots" class="dots"></span></div>
+
+<footer class="controls">
+  <span id="found-toast" class="toast" role="status">Click a difference on either picture to circle it.</span>
+  <span class="buttons">
+    <button id="hint-btn" class="action">💡 Hint (3 left · −50 pts)</button>
+    <button id="mute-btn" class="action">🔊 Sound on</button>
+    <button id="restart-btn" class="action">↻ Restart level</button>
+  </span>
+</footer>
+
+<div id="overlay" class="overlay hidden"></div>
+<p id="status-line" class="status-line" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
